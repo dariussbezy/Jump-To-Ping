@@ -68,3 +68,15 @@ export function subscribe(type: string, listener: (event: any) => void) {
     return event;
   });
 }
+
+/** Discord 352.6 router_utils accepts guild, channel, message and navigation options. */
+export function openChannel(channelId: string, messageId?: string) {
+  const channel = findByStoreName("ChannelStore")?.getChannel(channelId);
+  if (!channel) throw new Error("The target channel is no longer available");
+  const router = findByProps("transitionToGuild", "transitionTo");
+  if (typeof router?.transitionToGuild !== "function")
+    throw new Error("Discord channel routing is unavailable");
+  router.transitionToGuild(channel.guild_id || "@me", channelId, messageId, {
+    openChannel: true,
+  });
+}

@@ -14,8 +14,8 @@
       "versions": {
         "1.0.0-beta": {
           "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/JTP/Jump-To-Ping-Valenced-1.0.0-beta.zip",
-          "sha256": "112dda61936e50576d8aae59dad62e2fad9f62613770f9956bcd18033f1fd2f7",
-          "size": 10253,
+          "sha256": "155d163a3c8da7bfede135125e6e35888c577b6de041f48a52910efba2b91ff0",
+          "size": 10181,
           "dependencies": {
             "valenced.api": {
               "version": ">=1 <2"

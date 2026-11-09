@@ -2,6 +2,7 @@ import * as React from "react";
 import * as RN from "react-native";
 import {
   findByProps,
+  openChannel,
   findByStoreName,
   findAssetId,
   observeBell,
@@ -39,7 +40,6 @@ const implementation = (() => {
   let GuildStore;
   let ThemeStore;
   let notifyTimer = null;
-  let SelectedChannelStore;
   let activeFetches = 0;
   let generation = 0;
   const waitTimers = new Map();
@@ -55,7 +55,6 @@ const implementation = (() => {
   const inflight = new Set();
   const failedAt = new Map();
   const pending = [];
-  const jumpTimers = [];
   let hydrationUnsubscribe = null;
   let loadRequested = false;
   let initialized = false;
@@ -895,8 +894,6 @@ const implementation = (() => {
     UserStore = UserStore || findByStoreName("UserStore");
     ChannelStore = ChannelStore || findByStoreName("ChannelStore");
     GuildStore = GuildStore || findByStoreName("GuildStore");
-    SelectedChannelStore =
-      SelectedChannelStore || findByStoreName("SelectedChannelStore");
     return !!(ReadStateStore && UserStore && ChannelStore);
   }
   const getChannel = (id) => {
@@ -1287,66 +1284,15 @@ const implementation = (() => {
     if (!channelId) return;
     closeSheet();
     delay(() => {
-      let navigate = null,
-        jump = null;
       try {
-        navigate = findByProps("transitionToChannel");
-      } catch (_) {}
-      try {
-        jump = findByProps("jumpToMessage");
-      } catch (_) {}
-      try {
-        if (!navigate || typeof navigate.transitionToChannel !== "function")
-          throw Error();
-        navigate.transitionToChannel(String(channelId), {});
-      } catch (_) {
-        toast("Could not open this chat");
-        return;
-      }
-      if (!messageId) return;
-      const cid = String(channelId),
-        mid = String(messageId);
-      delay(() => {
-        let loaded = false;
-        try {
-          loaded = !!(
-            MessageStore &&
-            MessageStore.getMessage &&
-            MessageStore.getMessage(cid, mid)
-          );
-        } catch (_) {}
-        try {
-          if (!jump || typeof jump.jumpToMessage !== "function") throw Error();
-          jump.jumpToMessage({
-            channelId: cid,
-            messageId: mid,
-            flash: true,
-            jumpType: loaded ? "ANIMATED" : "INSTANT",
-          });
-        } catch (_) {
-          toast("Could not jump to this message");
-          return;
-        }
-        // Second pass: once the messages around the target have loaded, the list can sit a bit off. Re-center once.
-        jumpTimers.push(
-          delay(() => {
-            try {
-              if (
-                SelectedChannelStore &&
-                SelectedChannelStore.getChannelId &&
-                String(SelectedChannelStore.getChannelId()) !== cid
-              )
-                return;
-              jump.jumpToMessage({
-                channelId: cid,
-                messageId: mid,
-                flash: true,
-                jumpType: "INSTANT",
-              });
-            } catch (_) {}
-          }, 1500),
+        openChannel(
+          String(channelId),
+          messageId ? String(messageId) : undefined,
         );
-      }, 650);
+      } catch (error) {
+        console.error("Jump to Ping: navigation failed", error);
+        toast("Could not open this chat");
+      }
     }, 220);
   }
   function jumpToPing(r) {
@@ -1828,7 +1774,6 @@ const implementation = (() => {
     failedAt.clear();
     pending.length = 0;
     activeFetches = 0;
-    for (const t of jumpTimers.splice(0)) clearTimeout(t);
     try {
       UserStore && UserStore.emitChange && UserStore.emitChange();
     } catch (_) {}
