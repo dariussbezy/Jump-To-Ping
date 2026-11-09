@@ -22,8 +22,6 @@ https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/JTP/i
 
 Select the **beta** channel, install **Jump to Ping**, enable it and restart Discord. Open the plugin settings to configure **Only show with pings**, **Show count badge** and **Include DMs**.
 
-Built for the current setup: Valenced 1.3.0 and Discord 352.6 alpha. Visual behavior on a device still needs confirmation; iOS has not been verified.
-
 ## Privacy
 
 The plugin uses Discord's unread counters and message cache. When resolving an uncached ping, it requests recent messages through Discord's own API, using your existing session. Nothing is sent to an external service.
