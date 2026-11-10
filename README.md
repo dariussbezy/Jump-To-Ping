@@ -1,5 +1,7 @@
 # Jump to Ping for Valenced
 
+> **Development moved:** all plugins and themes are now maintained in [Valenced Plugins & Themes](https://github.com/dariussbezy/dariussbezy-Valenced-Plugins-Themes). Use the [single repository URL](https://raw.githubusercontent.com/dariussbezy/dariussbezy-Valenced-Plugins-Themes/main/index.json) for installation and updates. This repository remains available for historical links.
+
 Find unread pings in one place and jump to their messages. Version: **1.0.0-beta**.
 
 ## Features
@@ -17,7 +19,7 @@ Find unread pings in one place and jump to their messages. Version: **1.0.0-beta
 In Valenced, open **Plugins → Advanced → Repository URL** and add:
 
 ```text
-https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/JTP/index.json
+https://raw.githubusercontent.com/dariussbezy/dariussbezy-Valenced-Plugins-Themes/main/index.json
 ```
 
 Select the **beta** channel, install **Jump to Ping**, enable it and restart Discord. Open the plugin settings to configure **Only show with pings**, **Show count badge** and **Include DMs**.
