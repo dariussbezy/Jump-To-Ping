@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import implementation, { useSettings } from "./plugin.js";
 export default plugin<{ jsonStorage: Record<string, any> }>({
   jsonStorage: { load: true, default: useSettings.defaults },
@@ -16,5 +17,5 @@ export default plugin<{ jsonStorage: Record<string, any> }>({
   stop({ plugin: instance }) {
     instance.requireReload();
   },
-  SettingsComponent: implementation.settings,
+  SettingsComponent: () => createElement(implementation.settings),
 });

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "Jump to Ping",
-  "description": "Jump to Ping for Valenced.",
+  "description": "Find unread mentions, replies and DMs, then jump straight to the message.",
   "plugins": {
     "dariuss.jump-to-ping": {
       "name": "Jump to Ping",
@@ -13,9 +13,9 @@
       },
       "versions": {
         "1.0.0-beta": {
-          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/JTP/Jump-To-Ping-Valenced-1.0.0-beta.zip",
-          "sha256": "155d163a3c8da7bfede135125e6e35888c577b6de041f48a52910efba2b91ff0",
-          "size": 10181,
+          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/pool/dariuss.jump-to-ping@1.0.0-beta.zip",
+          "sha256": "222d84fb71e6fcb9f6ef769e8e8c4dfd17136bd88bd61069d8a2bc6e3594b122",
+          "size": 9857,
           "dependencies": {
             "valenced.api": {
               "version": ">=1 <2"

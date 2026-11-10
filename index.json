@@ -1,0 +1,31 @@
+{
+  "format": 1,
+  "name": "Jump to Ping",
+  "description": "Find unread mentions, replies and DMs, then jump straight to the message.",
+  "plugins": {
+    "dariuss.jump-to-ping": {
+      "name": "Jump to Ping",
+      "description": "Find unread mentions, replies and DMs, then jump straight to the message.",
+      "author": "dariuss",
+      "icon": "AtIcon",
+      "channels": {
+        "beta": "1.0.0-beta"
+      },
+      "versions": {
+        "1.0.0-beta": {
+          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/pool/dariuss.jump-to-ping@1.0.0-beta.zip",
+          "sha256": "222d84fb71e6fcb9f6ef769e8e8c4dfd17136bd88bd61069d8a2bc6e3594b122",
+          "size": 9857,
+          "dependencies": {
+            "valenced.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {
+              "version": ">=352.6 <352.7"
+            }
+          }
+        }
+      }
+    }
+  }
+}

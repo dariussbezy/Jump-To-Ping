@@ -27,3 +27,9 @@ Select the **beta** channel, install **Jump to Ping**, enable it and restart Dis
 The plugin uses Discord's unread counters and message cache. When resolving an uncached ping, it requests recent messages through Discord's own API, using your existing session. Nothing is sent to an external service.
 
 Only the three preferences are saved locally. Message previews remain in memory and are cleared when the plugin stops. No token or API key needs to be entered.
+
+## Repository structure
+
+Sources use the [official Valenced plugin template](https://github.com/Valenced/valenced-plugin-template/tree/9a4f9187137a75d86fe552d0e594889a6e6fd7e5). The implementation is in [`plugins/JTP/js`](plugins/JTP/js), with shared configuration and the official plugin CLI at the repository root. `./gradlew packageAllPlugins` packages the plugin; `npm run publish:local` prepares the pool and both repository indexes. The `JTP/index.json` installation URL remains supported. Artifacts stay on `main` and the beta channel.
+
+Install development dependencies with `bun install --frozen-lockfile` before running the root scripts. The compiler and SDK revisions are pinned in `package.json`.
