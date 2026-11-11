@@ -3,13 +3,13 @@
   "description": "Find unread mentions, replies and DMs, then jump straight to the message.",
   "channels": {
     "dariuss.jump-to-ping": {
-      "beta": "1.0.0-beta"
+      "beta": "1.1.0-beta"
     }
   },
   "distribution": {
     "source": "plugins/JTP",
     "directory": "JTP",
-    "archive": "Jump-To-Ping-Valenced-1.0.0-beta.zip",
+    "archive": "Jump-To-Ping-Valenced-1.1.0-beta.zip",
     "repository": "dariussbezy/Jump-To-Ping"
   }
 }

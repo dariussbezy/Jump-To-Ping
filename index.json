@@ -9,7 +9,7 @@
       "author": "dariuss",
       "icon": "AtIcon",
       "channels": {
-        "beta": "1.0.0-beta"
+        "beta": "1.1.0-beta"
       },
       "versions": {
         "1.0.0-beta": {
@@ -23,6 +23,17 @@
             "discord": {
               "version": ">=352.6 <352.7"
             }
+          }
+        },
+        "1.1.0-beta": {
+          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/pool/dariuss.jump-to-ping@1.1.0-beta.zip",
+          "sha256": "314aaef1e04650116ac26c700059cc410ce9c549d411d5778d64e18ee64728bf",
+          "size": 9353,
+          "dependencies": {
+            "valenced.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {}
           }
         }
       }

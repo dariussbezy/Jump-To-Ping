@@ -1,8 +1,6 @@
 # Jump to Ping for Valenced
 
-> Valenced test repository. The combined catalog is available from [dariussbezy's Plugins](https://github.com/dariussbezy/dariussbezy-Plugins).
-
-Find unread pings in one place and jump to their messages. Version: **1.0.0-beta**.
+Find unread pings in one place and jump to their messages. Version: **1.1.0-beta**.
 
 ## Features
 
