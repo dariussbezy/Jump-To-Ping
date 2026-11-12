@@ -13,7 +13,7 @@
       },
       "versions": {
         "1.0.0-beta": {
-          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/pool/dariuss.jump-to-ping@1.0.0-beta.zip",
+          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/4ab02269c93e3e3d74206fbdb1b0f7fe954dbd4e/pool/dariuss.jump-to-ping@1.0.0-beta.zip",
           "sha256": "b669ab7151ddff919625a1a1f18d1b452534e96c8de4893fb788ca4e19e17ae8",
           "size": 8081,
           "dependencies": {
@@ -26,9 +26,9 @@
           }
         },
         "1.1.0-beta": {
-          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/refs/heads/main/pool/dariuss.jump-to-ping@1.1.0-beta.zip",
-          "sha256": "9ef1287ffdcc80e7d77b56b001138657098c11896fbbfb254351a3f5b10846d3",
-          "size": 9413,
+          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/4ab02269c93e3e3d74206fbdb1b0f7fe954dbd4e/pool/dariuss.jump-to-ping@1.1.0-beta.zip",
+          "sha256": "03667dc77a587dc620b9d5bcf6f7bfb7045a1b3e0d1ff70889a75d883759fe28",
+          "size": 9571,
           "dependencies": {
             "valenced.api": {
               "version": ">=1 <2"
