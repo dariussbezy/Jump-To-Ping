@@ -1,15 +1,16 @@
 {
   "format": 1,
   "name": "Jump to Ping",
-  "description": "Find unread mentions, replies and DMs, then jump straight to the message.",
+  "description": "Jump to unread mentions, replies and DMs from a button beside the notifications bell.",
   "plugins": {
     "dariuss.jump-to-ping": {
       "name": "Jump to Ping",
-      "description": "Find unread mentions, replies and DMs, then jump straight to the message.",
-      "author": "dariuss",
+      "description": "Jump to unread mentions, replies and DMs from a button beside the notifications bell.",
+      "author": "dariussbezy <908767091522420817> (https://github.com/dariussbezy \"GitHub\")",
       "icon": "AtIcon",
       "channels": {
-        "beta": "1.1.0-beta"
+        "beta": "2.1.0",
+        "latest": "2.1.0"
       },
       "versions": {
         "1.0.0-beta": {
@@ -29,6 +30,17 @@
           "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/4ab02269c93e3e3d74206fbdb1b0f7fe954dbd4e/pool/dariuss.jump-to-ping@1.1.0-beta.zip",
           "sha256": "03667dc77a587dc620b9d5bcf6f7bfb7045a1b3e0d1ff70889a75d883759fe28",
           "size": 9571,
+          "dependencies": {
+            "valenced.api": {
+              "version": ">=1 <2"
+            },
+            "discord": {}
+          }
+        },
+        "2.1.0": {
+          "url": "https://raw.githubusercontent.com/dariussbezy/Jump-To-Ping/main/pool/dariuss.jump-to-ping@2.1.0.zip",
+          "sha256": "656c2fd50e554be2ff816992faaa5eee03c1900bc29537ca568ca503a60fd286",
+          "size": 9505,
           "dependencies": {
             "valenced.api": {
               "version": ">=1 <2"
